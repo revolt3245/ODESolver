@@ -13,10 +13,22 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="헤더 파일\Fixed Step Solver">
+    <Filter Include="소스 파일\Data Structure">
+      <UniqueIdentifier>{8999656d-3575-493a-89ae-5e980a4bccc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Data Structure">
+      <UniqueIdentifier>{7b781f7a-0b4d-4ec7-addf-0fbeb5459ea8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Solver">
+      <UniqueIdentifier>{bf7f42c8-4091-4ff4-ad60-e8637bcb4b10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Solver\Fixed Step Solver">
       <UniqueIdentifier>{a20b4e4a-51ba-4c14-867e-df3b252c401c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Fixed Step Solver">
+    <Filter Include="소스 파일\Solver">
+      <UniqueIdentifier>{deef9d8f-61cd-4981-b886-642f9486250d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Solver\Fixed Step Solver">
       <UniqueIdentifier>{9573f4b0-08a8-43bd-870f-ff4ac7d91738}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -24,37 +36,43 @@
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Solver.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="FixedStepSolver.cpp">
-      <Filter>소스 파일\Fixed Step Solver</Filter>
+      <Filter>소스 파일\Solver\Fixed Step Solver</Filter>
     </ClCompile>
     <ClCompile Include="Euler.cpp">
-      <Filter>소스 파일\Fixed Step Solver</Filter>
+      <Filter>소스 파일\Solver\Fixed Step Solver</Filter>
     </ClCompile>
     <ClCompile Include="RungeKutta.cpp">
-      <Filter>소스 파일\Fixed Step Solver</Filter>
+      <Filter>소스 파일\Solver\Fixed Step Solver</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector.cpp">
+      <Filter>소스 파일\Data Structure</Filter>
+    </ClCompile>
+    <ClCompile Include="Solver.cpp">
+      <Filter>소스 파일\Solver</Filter>
+    </ClCompile>
+    <ClCompile Include="Butcher.cpp">
+      <Filter>소스 파일\Data Structure</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Solver.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="FixedStepSolver.h">
-      <Filter>헤더 파일\Fixed Step Solver</Filter>
+      <Filter>헤더 파일\Solver\Fixed Step Solver</Filter>
     </ClInclude>
     <ClInclude Include="Euler.h">
-      <Filter>헤더 파일\Fixed Step Solver</Filter>
+      <Filter>헤더 파일\Solver\Fixed Step Solver</Filter>
     </ClInclude>
     <ClInclude Include="RungeKutta.h">
-      <Filter>헤더 파일\Fixed Step Solver</Filter>
+      <Filter>헤더 파일\Solver\Fixed Step Solver</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>헤더 파일\Data Structure</Filter>
+    </ClInclude>
+    <ClInclude Include="Solver.h">
+      <Filter>헤더 파일\Solver</Filter>
+    </ClInclude>
+    <ClInclude Include="Butcher.h">
+      <Filter>헤더 파일\Data Structure</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

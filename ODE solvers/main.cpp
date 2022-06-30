@@ -12,6 +12,7 @@
 
 #include "Vector.h"
 #include "RungeKutta.h"
+#include "Butcher.h"
 
 using namespace std;
 using namespace Solver;
@@ -19,41 +20,18 @@ using namespace Solver;
 Vector dynamics(double time, Vector x);
 
 void test() {
-	// file
-	ofstream file("data.csv", 'w');
-	file.precision(5);
-	cout.precision(5);
+	double t = 0;
+	Vector x = { 2.0, 0.0 };
 
-	file.setf(ios::fixed);
-	cout.setf(ios::fixed);
-
-	// local solver
-	Vector X = { 2.0, 0. };
 	auto solver = RungeKutta(1. / 1000);
-	double t = 0.0;
 
-	double elapses = 0.0;
-
-	auto start = chrono::high_resolution_clock::now();
-	for (int i = 0; i < 100000; i++) {
-		auto start = chrono::high_resolution_clock::now();
-		auto [ttemp, Xtemp] = solver.Update(dynamics, t, X);
-		auto elapse = chrono::duration_cast<chrono::microseconds>(chrono::high_resolution_clock::now() - start).count();
-
+	for (auto i = 0; i < 10000; i++) {
+		auto [ttemp, xtemp] = solver.Update(dynamics, t, x);
 		t = ttemp;
-		X = Xtemp;
+		x = xtemp;
 
-		file << t << ", " << X << "\n";
-
-		/*
-		if (i % 100 == 99) {
-			cout << X << "\n";
-		}
-		*/
-
-		elapses += elapse;
+		//cout << x << "\n";
 	}
-	cout << elapses / 100000 << " us\n";
 }
 
 int main() {

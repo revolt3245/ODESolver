@@ -131,6 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Butcher.cpp" />
     <ClCompile Include="Euler.cpp" />
     <ClCompile Include="FixedStepSolver.cpp" />
     <ClCompile Include="main.cpp" />
@@ -139,6 +140,7 @@
     <ClCompile Include="Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Butcher.h" />
     <ClInclude Include="Euler.h" />
     <ClInclude Include="FixedStepSolver.h" />
     <ClInclude Include="RungeKutta.h" />

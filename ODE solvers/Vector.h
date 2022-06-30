@@ -1,6 +1,8 @@
 #pragma once
 
 #include <iostream>
+#include <functional>
+
 #include <crtdbg.h>
 
 #if _DEBUG
@@ -52,7 +54,15 @@ namespace Solver {
 		Vector& operator=(Vector&& obj) noexcept;
 
 		// indexing
-		double& operator[](size_t idx);
+		double& operator[](size_t idx) const;
+
+		// Vector operations
+		friend double dot(const Vector& v1, const Vector& v2);
+		friend double norm(const Vector& v1);
+
+		//append
+		Vector& append(const double& num);
+		Vector& append(const Vector& v);
 
 		//getter
 		double* get_data();
@@ -64,5 +74,7 @@ namespace Solver {
 
 		size_t alloc_page;
 	};
+
+	using fx = function<Vector(double, Vector)>;
 }
 

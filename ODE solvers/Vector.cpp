@@ -25,7 +25,7 @@ namespace Solver {
 		size_t alloc_size = this->dim / page_data + (bool)(this->dim % page_data);
 
 		this->X = new double[alloc_size * page_data];
-		fill(X, X + alloc_size, 0);
+		fill(X, X + alloc_size * page_data, 0);
 
 		this->alloc_page = alloc_size;
 	}
@@ -186,9 +186,45 @@ namespace Solver {
 
 		return *this;
 	}
-	double& Vector::operator[](size_t idx)
+	double& Vector::operator[](size_t idx) const
 	{
 		return this->X[idx];
+	}
+	Vector& Vector::append(const double& num)
+	{
+		this->dim++;
+		size_t alloc_size = this->dim / page_data + (bool)(this->dim % page_data);
+		if (this->alloc_page != alloc_size) {
+			this->alloc_page = alloc_size;
+
+			auto Xnew = new double[this->alloc_page * page_data];
+			memcpy(Xnew, this->X, (this->dim - 1) * sizeof(double));
+
+			delete[] this->X;
+			this->X = Xnew;
+		}
+		this->X[this->dim - 1] = num;
+
+		return *this;
+	}
+	Vector& Vector::append(const Vector& v)
+	{
+		this->dim += v.dim;
+		size_t alloc_size = this->dim / page_data + (bool)(this->dim % page_data);
+
+		if (this->alloc_page != alloc_size) {
+			this->alloc_page = alloc_size;
+
+			auto Xnew = new double[this->alloc_page * page_data];
+			memcpy(Xnew, this->X, (this->dim - v.dim) * sizeof(double));
+
+			delete[] this->X;
+			this->X = Xnew;
+		}
+
+		memcpy(this->X + this->dim - v.dim, v.X, sizeof(double) * v.dim);
+
+		return *this;
 	}
 	double* Vector::get_data()
 	{
@@ -247,5 +283,31 @@ namespace Solver {
 		}
 
 		return res;
+	}
+	double dot(const Vector& v1, const Vector& v2)
+	{
+		if (v1.dim != v2.dim) {
+			cerr << "Dimension error\n";
+
+			return 0.0;
+		}
+
+		double res = 0.0;
+
+		for (auto i = 0; i < v1.dim; i++) {
+			res += v1[i] * v2[i];
+		}
+
+		return res;
+	}
+	double norm(const Vector& v1)
+	{
+		double res = 0.0;
+
+		for (auto i = 0; i < v1.dim; i++) {
+			res += v1[i] * v1[i];
+		}
+
+		return sqrt(res);
 	}
 }

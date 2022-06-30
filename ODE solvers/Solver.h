@@ -8,7 +8,6 @@
 using namespace std;
 
 namespace Solver {
-	using fx = function<Vector(double, Vector)>;
 	class Solver
 	{
 	public:

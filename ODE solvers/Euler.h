@@ -5,8 +5,13 @@ namespace Solver {
     class Euler : public FixedStepSolver
     {
     public:
-        Euler(double dt):FixedStepSolver(dt) {};
-        // FixedStepSolver을(를) 통해 상속됨
-        virtual Vector algorithm(fx dynamics, double current_time, Vector current) override;
+        Euler(double dt):FixedStepSolver(
+            dt, 
+            {
+                2,
+                {0., 1.},
+                {{}, {1.}},
+                {0., 1.}
+            }) {};
     };
 }

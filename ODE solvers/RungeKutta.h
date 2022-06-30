@@ -5,10 +5,14 @@ namespace Solver {
     class RungeKutta : public FixedStepSolver
     {
     public:
-        RungeKutta(double dt) :FixedStepSolver(dt) {};
+        RungeKutta(double dt) :FixedStepSolver(
+            dt,
+            {
+                4, 
+                { 0., 0.5, 0.5, 1.0 }, 
+                { {}, {0.5},{0.0, 0.5}, {0.0, 0.0, 1.0} }, 
+                { 1. / 6, 2. / 6, 2. / 6, 1. / 6 }
+            }) {};
         ~RungeKutta() {};
-
-        // FixedStepSolver을(를) 통해 상속됨
-        virtual Vector algorithm(fx dynamics, double current_time, Vector current) override;
     };
 }
