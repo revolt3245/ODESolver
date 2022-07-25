@@ -25,13 +25,22 @@ void test() {
 
 	auto solver = RungeKutta(1. / 1000);
 
-	for (auto i = 0; i < 10000; i++) {
+	double elapses = 0.0;
+	const int total_step = 10000;
+
+	for (auto i = 0; i < total_step; i++) {
+		auto start = chrono::high_resolution_clock::now();
 		auto [ttemp, xtemp] = solver.Update(dynamics, t, x);
+		auto elapse = chrono::duration_cast<chrono::microseconds>(chrono::high_resolution_clock::now() - start).count();
 		t = ttemp;
 		x = xtemp;
 
 		//cout << x << "\n";
+
+		elapses += elapse;
 	}
+
+	cout << elapses / total_step << " us\n";
 }
 
 int main() {

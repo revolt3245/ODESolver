@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Optimization", "Optimizatio
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ODE solvers", "ODE solvers\ODE solvers.vcxproj", "{26E8A7D5-876F-4135-BAAF-44C62647B9D3}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Least Square", "Least Square\Least Square.vcxproj", "{FE865DE6-448D-4DB2-BB98-E6A8FCF27260}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{26E8A7D5-876F-4135-BAAF-44C62647B9D3}.Release|x64.Build.0 = Release|x64
 		{26E8A7D5-876F-4135-BAAF-44C62647B9D3}.Release|x86.ActiveCfg = Release|Win32
 		{26E8A7D5-876F-4135-BAAF-44C62647B9D3}.Release|x86.Build.0 = Release|Win32
+		{FE865DE6-448D-4DB2-BB98-E6A8FCF27260}.Debug|x64.ActiveCfg = Debug|x64
+		{FE865DE6-448D-4DB2-BB98-E6A8FCF27260}.Debug|x64.Build.0 = Debug|x64
+		{FE865DE6-448D-4DB2-BB98-E6A8FCF27260}.Debug|x86.ActiveCfg = Debug|Win32
+		{FE865DE6-448D-4DB2-BB98-E6A8FCF27260}.Debug|x86.Build.0 = Debug|Win32
+		{FE865DE6-448D-4DB2-BB98-E6A8FCF27260}.Release|x64.ActiveCfg = Release|x64
+		{FE865DE6-448D-4DB2-BB98-E6A8FCF27260}.Release|x64.Build.0 = Release|x64
+		{FE865DE6-448D-4DB2-BB98-E6A8FCF27260}.Release|x86.ActiveCfg = Release|Win32
+		{FE865DE6-448D-4DB2-BB98-E6A8FCF27260}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
